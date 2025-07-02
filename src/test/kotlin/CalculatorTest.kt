@@ -45,7 +45,7 @@ class CalculatorTest {
     }
 
     @Test
-    fun `add returns sum of many values and consider \n as a delimiter`() {
+    fun `add returns sum of many values and consider backslash n as a delimiter`() {
         val calculator = StringCalculator()
         val input = "1\n2,3"
 
