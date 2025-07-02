@@ -44,4 +44,14 @@ class CalculatorTest {
         assertEquals(15, result)
     }
 
+    @Test
+    fun `add returns sum of many values and consider \n as a delimiter`() {
+        val calculator = StringCalculator()
+        val input = "1\n2,3"
+
+        val result = calculator.add(input)
+
+        assertEquals(6, result)
+    }
+
 }
