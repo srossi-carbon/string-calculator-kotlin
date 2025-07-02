@@ -25,13 +25,23 @@ class CalculatorTest {
     }
 
     @Test
-    fun `add returns sum of two values for string containing two values separated by comma`() {
+    fun `add returns sum of two values for string containing two values`() {
         val calculator = StringCalculator()
         val input = "1,2"
 
         val result = calculator.add(input)
 
         assertEquals(3, result)
+    }
+
+    @Test
+    fun `add returns sum of many values for string containing more than two values`() {
+        val calculator = StringCalculator()
+        val input = "1,2,3,4,5"
+
+        val result = calculator.add(input)
+
+        assertEquals(15, result)
     }
 
 }
