@@ -8,15 +8,31 @@ class StringCalculator {
         val delimiters = mutableListOf(",", "\n")
         val parsingResult = CalculatorParsingResult(input)
         val customDelimiter = parsingResult.customDelimiter
-        val calculatorValues = parsingResult.calculatorValues
+        val calculatorValuesStr = parsingResult.calculatorValues
 
         if (customDelimiter.isNotEmpty()) {
             delimiters.add(customDelimiter)
         }
 
-        return calculatorValues
+        val values = getValues(calculatorValuesStr, delimiters)
+        val negativeNumbers = filterNegativeNumbers(values);
+
+        if (negativeNumbers.isNotEmpty()) {
+            throw NegativeNumberException(negativeNumbers)
+        }
+
+        return values.sum()
+    }
+
+
+    fun filterNegativeNumbers(values: List<Int>): List<Int> {
+        return values.filter { it < 0 }
+    }
+
+    fun getValues(values: String, delimiters: MutableList<String>): List<Int> {
+        return values
             .split(*delimiters.toTypedArray())
             .filter { it.isNotBlank() }
-            .sumOf { it.toInt() }
+            .map { it.toInt() }
     }
 }

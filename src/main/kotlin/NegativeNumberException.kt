@@ -1,22 +1,9 @@
 package org.example
 
-class StringCalculator {
-
-    fun add(input: String): Int {
-        if (input.isEmpty()) {return 0}
-
-        val delimiters = mutableListOf(",", "\n")
-        val parsingResult = CalculatorParsingResult(input)
-        val customDelimiter = parsingResult.customDelimiter
-        val calculatorValues = parsingResult.calculatorValues
-
-        if (customDelimiter.isNotEmpty()) {
-            delimiters.add(customDelimiter)
-        }
-
-        return calculatorValues
-            .split(*delimiters.toTypedArray())
-            .filter { it.isNotBlank() }
-            .sumOf { it.toInt() }
+class NegativeNumberException (negativeNumbers: List<Int>) : Exception (
+    if (negativeNumbers.size == 1) {
+        "Les nombres négatifs ne sont pas autorisés"
+    } else {
+        "Les nombres négatifs ne sont pas autorisés : ${negativeNumbers.joinToString(", ")}"
     }
-}
+)
