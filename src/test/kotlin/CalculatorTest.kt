@@ -94,11 +94,21 @@ class CalculatorTest {
     @Test
     fun `add returns sum of values but ignore values above 1000`() {
         val calculator = StringCalculator()
-        val input = "1,2,3,1000"
+        val input = "1,2,3,1001"
 
         val result = calculator.add(input)
 
         assertEquals(6, result)
+    }
+
+    @Test
+    fun `add returns sum of values but ignore values above 1000 but allow until 1000`() {
+        val calculator = StringCalculator()
+        val input = "1,2,3,1000"
+
+        val result = calculator.add(input)
+
+        assertEquals(1006, result)
     }
 
 }
