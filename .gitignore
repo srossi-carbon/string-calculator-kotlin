@@ -1,11 +1,17 @@
 # === Build artifacts ===
 /build/
 *.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
 
 # === Gradle ===
 .gradle/
-/gradle-app.setting
-# Wrapper files should be kept (checked into Git)
+gradle-app.setting
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
 gradlew
@@ -14,20 +20,39 @@ gradlew.bat
 # === IntelliJ IDEA ===
 *.iml
 .idea/
-# garder le dossier .idea si tu veux partager settings, mais ignorer tout sauf certains fichiers :
-# .idea/workspace.xml, .idea/tasks.xml et .idea/.name sont personnels
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
-# cf. template JetBrains :contentReference[oaicite:1]{index=1}
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/aws.xml
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/artifacts
+.idea/**/compiler.xml
+.idea/**/jarRepositories.xml
+.idea/**/modules.xml
+.idea/**/misc.xml
+.idea/**/modules
+.idea/**/sonarlint
+.idea/**/httpRequests
 
 # === Kotlin / Java ===
 *.log
-hs_err_pid*
-*.jar
-*.war
-*.ear
-*.zip
+*.txt
+*.iml
+*.ipr
+*.iws
+*.out
+*.ctxt
 
 # === OS specifics ===
 .DS_Store
