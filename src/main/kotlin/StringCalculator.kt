@@ -32,7 +32,8 @@ class StringCalculator {
     fun getValues(values: String, delimiters: MutableList<String>): List<Int> {
         return values
             .split(*delimiters.toTypedArray())
-            .filter { it.isNotBlank() }
+            .filter { it.isNotBlank()  }
             .map { it.toInt() }
+            .filter { it <= 1000 }
     }
 }
