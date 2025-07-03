@@ -1,4 +1,3 @@
-
 import org.example.StringCalculator
 import kotlin.test.Test
 import kotlin.test.assertEquals
