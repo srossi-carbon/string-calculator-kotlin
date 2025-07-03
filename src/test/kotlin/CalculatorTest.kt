@@ -91,4 +91,14 @@ class CalculatorTest {
         assertEquals("Les nombres négatifs ne sont pas autorisés : -5, -10", exception.message)
     }
 
+    @Test
+    fun `add returns sum of values but ignore values above 1000`() {
+        val calculator = StringCalculator()
+        val input = "1,2,3,1000"
+
+        val result = calculator.add(input)
+
+        assertEquals(6, result)
+    }
+
 }
